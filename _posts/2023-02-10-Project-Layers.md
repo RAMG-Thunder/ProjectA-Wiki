@@ -1,0 +1,30 @@
+---
+layout: post
+title: 프로젝트 어셈블리 종류 및 설명
+subtitle: 어떤 레이어들이 있는지 알아봅시다.
+categories: 프로젝트구조
+tags: [Architecture]
+---
+
+# Core
+Blitz ECS 라이브러리 있는 어셈블리.
+Entity와 Component 정의 부분.
+이 레이어에서 직접 코드를 작성할 일은 당분간은 많이 없을 것이다.
+
+# Game
+코어 레이어의 인터페이스를 구현한 Component, System들을 넣어두는 레이어.
+System 특정 애들만 순회하면서 업데이트 시키거나 그러한 동작을 수행한다. 
+System은 데이터만 갱신 시켜주는 것이 제일 좋다.
+GameObject를 만들거나 그런 행동을 제외하고 Component 읽어서 거기에 따라 동작하면 다른 Component에 Write하는식으로 게임이 동작하는게 보통이다.
+
+# Service
+Spawner가 핵심인 레이어이다.
+나중에는 그외 말 그대로 비즈니스 로직들이 모여있는 서비스 레이어이다. 
+특정 시스템 거쳐야 되면 서비스 레이어에 로직을 구현하고, 이를 얻어오는 형태로 사용하도록 해야한다.
+
+
+# View
+뷰가 Game에서 만든 엔티티가 GameObject로 돌아가기 위한 영역.
+SpawnerController에서 이벤트 받아와서 게임오브젝트로 조립한다.
+EcsSuperBehaviour (Behaviour)가 실제로 컴포넌트랑 1:1 매핑이 되며, IComponentBinder<>를 이용해서 바인딩을 진행한다.
+바인딩에 대한 정보를 이미 스폰 컨트롤러에서 다 가지고 있음 매핑이 되어있다.
