@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/ProjectA-Wiki/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ProjectA-Wiki/" rel="alternate" type="text/html" /><updated>2023-02-10T03:05:56+09:00</updated><id>http://localhost:4000/ProjectA-Wiki/feed.xml</id><title type="html">Project A Wiki</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>Team RAMG</name></author><entry><title type="html">프로젝트 어셈블리 종류 및 설명</title><link href="http://localhost:4000/ProjectA-Wiki/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B5%AC%EC%A1%B0/2023/02/10/Project-Layers.html" rel="alternate" type="text/html" title="프로젝트 어셈블리 종류 및 설명" /><published>2023-02-10T00:00:00+09:00</published><updated>2023-02-10T00:00:00+09:00</updated><id>http://localhost:4000/ProjectA-Wiki/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B5%AC%EC%A1%B0/2023/02/10/Project-Layers</id><content type="html" xml:base="http://localhost:4000/ProjectA-Wiki/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B5%AC%EC%A1%B0/2023/02/10/Project-Layers.html"><![CDATA[<h1 id="core">Core</h1>
+<p>Blitz ECS 라이브러리 있는 어셈블리.
+Entity와 Component 정의 부분.
+이 레이어에서 직접 코드를 작성할 일은 당분간은 많이 없을 것이다.</p>
+
+<h1 id="game">Game</h1>
+<p>코어 레이어의 인터페이스를 구현한 Component, System들을 넣어두는 레이어.
+System 특정 애들만 순회하면서 업데이트 시키거나 그러한 동작을 수행한다. 
+System은 데이터만 갱신 시켜주는 것이 제일 좋다.
+GameObject를 만들거나 그런 행동을 제외하고 Component 읽어서 거기에 따라 동작하면 다른 Component에 Write하는식으로 게임이 동작하는게 보통이다.</p>
+
+<h1 id="service">Service</h1>
+<p>Spawner가 핵심인 레이어이다.
+나중에는 그외 말 그대로 비즈니스 로직들이 모여있는 서비스 레이어이다. 
+특정 시스템 거쳐야 되면 서비스 레이어에 로직을 구현하고, 이를 얻어오는 형태로 사용하도록 해야한다.</p>
+
+<h1 id="view">View</h1>
+<p>뷰가 Game에서 만든 엔티티가 GameObject로 돌아가기 위한 영역.
+SpawnerController에서 이벤트 받아와서 게임오브젝트로 조립한다.
+EcsSuperBehaviour (Behaviour)가 실제로 컴포넌트랑 1:1 매핑이 되며, IComponentBinder&lt;&gt;를 이용해서 바인딩을 진행한다.
+바인딩에 대한 정보를 이미 스폰 컨트롤러에서 다 가지고 있음 매핑이 되어있다.</p>]]></content><author><name>Team RAMG</name></author><category term="프로젝트구조" /><category term="Architecture" /><summary type="html"><![CDATA[Core Blitz ECS 라이브러리 있는 어셈블리. Entity와 Component 정의 부분. 이 레이어에서 직접 코드를 작성할 일은 당분간은 많이 없을 것이다.]]></summary></entry><entry><title type="html">프로젝트 어셈블리 종류 및 설명</title><link href="http://localhost:4000/ProjectA-Wiki/markdown/2023/02/10/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%A0%88%EC%9D%B4%EC%96%B4-%EC%84%A4%EB%AA%85.html" rel="alternate" type="text/html" title="프로젝트 어셈블리 종류 및 설명" /><published>2023-02-10T00:00:00+09:00</published><updated>2023-02-10T00:00:00+09:00</updated><id>http://localhost:4000/ProjectA-Wiki/markdown/2023/02/10/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%A0%88%EC%9D%B4%EC%96%B4-%EC%84%A4%EB%AA%85</id><content type="html" xml:base="http://localhost:4000/ProjectA-Wiki/markdown/2023/02/10/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%A0%88%EC%9D%B4%EC%96%B4-%EC%84%A4%EB%AA%85.html"><![CDATA[<h1 id="core">Core</h1>
+<p>Blitz ECS 라이브러리 있는 어셈블리.
+Entity와 Component 정의 부분.
+이 레이어에서 직접 코드를 작성할 일은 당분간은 많이 없을 것이다.</p>
+
+<h1 id="game">Game</h1>
+<p>코어 레이어의 인터페이스를 구현한 Component, System들을 넣어두는 레이어.
+System 특정 애들만 순회하면서 업데이트 시키거나 그러한 동작을 수행한다. 
+System은 데이터만 갱신 시켜주는 것이 제일 좋다.
+GameObject를 만들거나 그런 행동을 제외하고 Component 읽어서 거기에 따라 동작하면 다른 Component에 Write하는식으로 게임이 동작하는게 보통이다.</p>
+
+<h1 id="service">Service</h1>
+<p>Spawner가 핵심인 레이어이다.
+나중에는 그외 말 그대로 비즈니스 로직들이 모여있는 서비스 레이어이다. 
+특정 시스템 거쳐야 되면 서비스 레이어에 로직을 구현하고, 이를 얻어오는 형태로 사용하도록 해야한다.</p>
+
+<h1 id="view">View</h1>
+<p>뷰가 Game에서 만든 엔티티가 GameObject로 돌아가기 위한 영역.
+SpawnerController에서 이벤트 받아와서 게임오브젝트로 조립한다.
+EcsSuperBehaviour (Behaviour)가 실제로 컴포넌트랑 1:1 매핑이 되며, IComponentBinder&lt;&gt;를 이용해서 바인딩을 진행한다.
+바인딩에 대한 정보를 이미 스폰 컨트롤러에서 다 가지고 있음 매핑이 되어있다.</p>]]></content><author><name>Team RAMG</name></author><category term="markdown" /><category term="Architecture" /><summary type="html"><![CDATA[Core Blitz ECS 라이브러리 있는 어셈블리. Entity와 Component 정의 부분. 이 레이어에서 직접 코드를 작성할 일은 당분간은 많이 없을 것이다.]]></summary></entry></feed>
