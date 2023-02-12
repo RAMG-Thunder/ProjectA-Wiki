@@ -3,7 +3,7 @@ layout: post
 title: 프로젝트 어셈블리 종류 및 설명
 subtitle: 어떤 레이어들이 있는지 알아봅시다.
 categories: 프로젝트구조
-tags: [Architecture]
+tags: [test]
 ---
 
 # Core
